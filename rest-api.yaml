@@ -1,0 +1,86 @@
+openapi: 3.0.0
+
+info:
+  title: Nest Task Manager REST API
+  description: A task manager REST API made during learning NestJS
+  version: 1.0.0
+
+paths:
+  /tasks:
+    get:
+      summary: Get tasks.
+      description: Get list of tasks using filters.
+      responses:
+        '200':
+          description: An array of tasks.
+          content:
+            application/json:
+              schema:
+                type: array
+    post:
+      summary: Create a task.
+      description: Create a task.
+      responses:
+        '201':
+          description: The created task.
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /tasks/:id:
+    get:
+      summary: Get a task.
+      description: Get a task by id.
+      responses:
+        '200':
+          description: The specified task.
+          content:
+            application/json:
+              schema:
+                type: object
+    delete:
+      summary: Delete a task.
+      description: Delete a task by id.
+      responses:
+        '200':
+          description: The deleted task.
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /tasks/:id/status:
+    patch:
+      summary: Update task status.
+      description: Update task status.
+      responses:
+        '200':
+          description: The updated task.
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /auth/signup:
+    post:
+      summary: Signup user.
+      description: Signup user.
+      responses:
+        '200':
+          description: The user info.
+          content:
+            application/json:
+              schema:
+                type: object
+  /auth/signin:
+    post:
+      summary: Signin user.
+      description: Signin user.
+      responses:
+        '200':
+          description: The user info.
+          content:
+            application/json:
+              schema:
+                type: object
