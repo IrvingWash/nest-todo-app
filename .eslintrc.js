@@ -14,6 +14,7 @@ module.exports = {
 	rules: {
 		'eol-last': ['error', 'always'],
 		'semi': ['error', 'always'],
-		'comma-dangle': ['error', 'always-multiline']
+		'comma-dangle': ['error', 'always-multiline'],
+		'@typescript-eslint/explicit-function-return-type': ["error"]
 	},
 };
