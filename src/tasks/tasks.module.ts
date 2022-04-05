@@ -1,4 +1,8 @@
 import { Module } from "@nestjs/common";
 
-@Module({})
+import { TasksController } from "./tasks.controller";
+
+@Module({
+	controllers: [TasksController],
+})
 export class TasksModule {}

@@ -13,6 +13,7 @@ module.exports = {
 	ignorePatterns: ['.eslintrc.js'],
 	rules: {
 		'eol-last': ['error', 'always'],
-		'semi': ['error', 'always']
+		'semi': ['error', 'always'],
+		'comma-dangle': ['error', 'always-multiline']
 	},
 };
