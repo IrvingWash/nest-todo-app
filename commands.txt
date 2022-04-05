@@ -1,0 +1,12 @@
+Create a docker container with postgres:
+_______run a container__________cont/loc port_environmental vars_____________actual container name
+docker run --name postgres-nest -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
+
+Start container:
+docker container start postgres-nest
+
+Stop container:
+docker container stop postgres-nest
+
+Delete container:
+docker container rm postgres-nest
