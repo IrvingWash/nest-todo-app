@@ -17,6 +17,5 @@ module.exports = {
 		'comma-dangle': ['error', 'always-multiline'],
 		'@typescript-eslint/explicit-function-return-type': ['error'],
 		'quotes': ['error', 'single'],
-		'@typescript-eslint/explicit-module-boundary-types': ['error', 'always']
 	},
 };
