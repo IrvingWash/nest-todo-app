@@ -1,18 +1,26 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 import { TaskStatus } from './task-status-enum';
+import { User } from 'src/auth/user.entity';
 
 @Entity()
 export class Task {
 	@PrimaryGeneratedColumn('uuid')
-	id: string;
+	public id: string;
 
 	@Column()
-	title: string;
+	public title: string;
 
 	@Column()
-	description: string;
+	public description: string;
 
 	@Column()
-	status: TaskStatus;
+	public status: TaskStatus;
+
+	@ManyToOne(
+		_type => User,
+		user => user.tasks,
+		{ eager: false }
+	)
+	public user: User;
 }

@@ -9,7 +9,7 @@ import { UsersRepository } from './users.repository';
 
 @Injectable()
 export class AuthService {
-	constructor (
+	public constructor (
 		@InjectRepository(UsersRepository)
 		private usersRepository: UsersRepository,
 		private jwtService: JwtService,
