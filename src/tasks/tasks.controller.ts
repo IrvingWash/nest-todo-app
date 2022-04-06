@@ -52,7 +52,7 @@ export class TasksController {
 	public async updateTaskStatus(
 		@Param('id') id: string,
 		@Body() updateTaskStatusDto: UpdateTaskStatusDto,
-		@GetUser() user: User
+		@GetUser() user: User,
 	): Promise<Task> {
 		const { status } = updateTaskStatusDto;
 	
@@ -60,7 +60,10 @@ export class TasksController {
 	}
 
 	@Delete('/:id')
-	public deleteTask(@Param('id') id: string): Promise<void> {
-		return this.tasksService.deleteTask(id);
+	public deleteTask(
+		@Param('id') id: string,
+		@GetUser() user: User,
+	): Promise<void> {
+		return this.tasksService.deleteTask(id, user);
 	}
 }
